@@ -1,28 +1,41 @@
-# Pokémon Evolution Advisor — SDU Case 1
+# Pokémon Evolution Advisor 
 
-A simple website that compares the six base stats of a Pokémon with its immediate next evolution(s) using the provided `pokemon.csv` dataset. It uses HTML, CSS, and JavaScript (no build tools or API key).
+A simple website that helps users decide whether to evolve a Pokémon by comparing its base statistics with those of its next evolution.
 
-## Run locally
+## Features
 
-From the project folder, run `python -m http.server 8000` and open `http://localhost:8000`. Do not open `index.html` directly with `file://` because browsers often block CSV fetches.
+1. Search and select Pokémon from the dataset.
 
-## Deploy with GitHub Pages
+2. Display Pokémon images when available.
 
-1. Create a new **public** GitHub repository called `pokemon-evolution-advisor`.
-2. Upload `index.html`, `style.css`, `app.js` and `pokemon.csv` to its root (README is optional).
-3. Open **Settings → Pages → Build and deployment**; choose **Deploy from a branch**, select **main** and **/(root)** and save.
-4. Wait for deployment and find the published website link on **Settings → Pages**. The site address is generally `https://YOUR-USERNAME.github.io/pokemon-evolution-advisor/` (replace username with your own).
-5. Open the public site and test Bulbasaur, Eevee, and Venusaur.
+3. Compare statistics before and after evolution.
+
+4. Support Pokémon with multiple evolution choices.
+
+5. Provide recommendations based on changes in total base stats.
+
+## Technologies and Data
+
+1. HTML: Website structure.
+
+2. CSS: Design and layout.
+
+3. JavaScript: Search, calculations, and recommendations.
+
+4. CSV: Pokémon statistics and evolution information from the supplied dataset.
+
+5. PokéAPI: Pokémon images when available.
 
 ## Decision rule
 
-Calculate the sum of HP, Attack, Defense, Special Attack, Special Defense and Speed for the selected Pokémon and each immediate next evolution. A positive difference leads to “Evolve for stronger base stats.” This is **not** a recommendation based on an individual Pokémon's level, moves, evolution costs or player strategy.
+The website compares six base stats: HP, Attack, Defense, Special Attack, Special Defense, and Speed.
 
-The ordinary evolution relationship uses `evolves_from_species_id`, and only base-form rows (`id < 10000`) are treated as next evolution targets. Sprite images are loaded from the public PokeAPI sprite repository when available. Missing images display a fallback.
+If an available evolution has higher total base stats, the website recommends evolving for stronger statistics.
 
-## Submission checklist
+## Limitations
 
-- [ ] Live GitHub Pages URL
-- [ ] Public GitHub repository URL
-- [ ] Actual time spent on the case (track your own work and AI-assistance time)
-- [ ] Actual monetary cost and AI tool plan/usage (report honestly; do not guess)
+Recommendations are based only on base statistics. The website does not consider evolution requirements, learned moves, or individual gameplay strategies.
+
+## Running Locally
+
+Keep the project files together, start a local server with python3 -m http.server 8000, and open http://localhost:8000 in a browser.
