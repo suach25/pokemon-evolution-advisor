@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Compare Pokémon base statistics before and after evolution.">
+  <title>Pokémon Evolution Advisor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <h1>Pokémon Evolution Advisor</h1>
+      <p>Should you evolve your Pokémon? Choose one to compare its base stats with its next evolution.</p>
+    </header>
+
+    <section class="panel">
+      <label for="pokemonSelect">Choose your Pokémon</label>
+      <input type="search" id="search" placeholder="Search Pokémon by name…" autocomplete="off" aria-label="Search Pokémon by name">
+      <select id="pokemonSelect" aria-label="Choose a Pokémon">
+        <option>Loading Pokémon…</option>
+      </select>
+      <p id="status" role="status">Loading the dataset…</p>
+    </section>
+
+    <section id="result" aria-live="polite"></section>
+
+    <section class="panel explanation">
+      <h2>How it works</h2>
+      <p>The website adds six base stats (HP, Attack, Defense, Special Attack, Special Defense and Speed) and compares the totals. If the next evolution has a higher total, it recommends evolving for stronger base stats.</p>
+      <h2>Limitations</h2>
+      <p>This comparison does not check evolution requirements, learned moves or individual player strategy. It uses rules, not a live AI prediction.</p>
+      <p class="small">Data: supplied <code>pokemon.csv</code> · Images: PokéAPI sprites, when available.</p>
+    </section>
+  </main>
+  <script src="app.js" defer></script>
+</body>
+</html>

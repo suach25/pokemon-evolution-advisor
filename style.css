@@ -1,0 +1,55 @@
+:root {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: #172333;
+  background: #f5f7fa;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+.shell { max-width: 960px; margin: auto; padding: 24px 18px; }
+.hero { background: white; border-bottom: 2px solid #dae3ed; padding: 18px 4px 22px; margin-bottom: 20px; }
+h1 { font-size: clamp(1.6rem, 3vw, 2rem); margin: 0 0 8px; }
+h2 { margin: 0 0 12px; font-size: 1.2rem; }
+h3 { margin: 12px 0 2px; }
+p { line-height: 1.6; }
+.hero p { margin: 0; color: #4f6074; }
+.panel, .result-card {
+  background: white;
+  border: 1px solid #dde5ee;
+  border-radius: 10px;
+  padding: 22px;
+  margin-bottom: 18px;
+}
+label { display: block; font-weight: 700; margin-bottom: 10px; }
+input, select {
+  display: block;
+  width: 100%;
+  border: 1px solid #adbbc9;
+  border-radius: 6px;
+  padding: 12px;
+  font: inherit;
+  background: white;
+  margin-bottom: 12px;
+}
+input:focus, select:focus { outline: 3px solid #b5cef2; }
+#status, .small { color: #586a80; font-size: .9rem; }
+.cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.mon { border: 1px solid #e0e8f1; border-radius: 10px; padding: 18px; text-align: center; background: #fafbfc; }
+.mon img { width: 160px; height: 160px; object-fit: contain; max-width: 100%; }
+.mon .empty-art { height: 160px; display: grid; place-items: center; color: #65768a; }
+.types { color: #566880; text-transform: capitalize; }
+.tag { display: inline-block; padding: 6px 10px; border-radius: 6px; font-size: .83rem; font-weight: 700; background: #e7f5ed; color: #12663a; }
+.tag.neutral { background: #fff2d8; color: #76500c; }
+.tag.missing { background: #e9eef5; color: #334155; }
+.stat-table { width: 100%; border-collapse: collapse; margin-top: 14px; }
+th, td { padding: 10px; border-bottom: 1px solid #e5edf5; text-align: right; }
+th:first-child, td:first-child { text-align: left; }
+th { background: #eef4fb; }
+.gain { color: #116940; font-weight: 700; }
+.note { padding: 12px 14px; background: #f0f5fc; border-radius: 6px; }
+.explanation h2:not(:first-child) { margin-top: 20px; }
+@media (max-width: 620px) {
+  .cards { grid-template-columns: 1fr; }
+  .panel, .result-card { padding: 18px; }
+  .mon img, .mon .empty-art { height: 130px; }
+  th, td { padding: 8px 5px; font-size: .85rem; }
+}
